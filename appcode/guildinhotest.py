@@ -19,3 +19,21 @@ def get_competitions():
     de = df[["competition_name", "season_name", "competition_id", "season_id"]]
     competitions = de.to_dict(orient='records')
     return json.dumps(competitions)
+
+# New function for processing competition data
+def process_competition(comp_id):
+    comp_id = int(comp_id)
+    competitions = json.loads(get_competitions())
+    selected_competition = None
+
+    for competition in competitions:
+        if competition['competition_id'] == comp_id:
+            selected_competition = competition
+            break
+
+    if selected_competition:
+        result = f"Competition ID: {selected_competition['competition_id']}, Competition Name: {selected_competition['competition_name']}"
+    else:
+        result = f"Competition not found for ID: {comp_id}"
+
+    return result

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+</head>
+<body>
+    <h1>Competition Selection Results</h1>
+    {% if result %}
+        <p>{{ result }}</p>
+    {% else %}
+        <p>No result available.</p>
+    {% endif %}
+    <a href="/">Back to Home</a>
+</body>
+</html>
