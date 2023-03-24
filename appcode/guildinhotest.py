@@ -2,7 +2,7 @@ import json
 import os
 from pandas.io.json import json_normalize
 
-
+#fetches the list of competitions
 def get_competitions():
     # Get the current working directory
     current_dir = os.getcwd()
@@ -20,7 +20,7 @@ def get_competitions():
     competitions = de.to_dict(orient='records')
     return json.dumps(competitions)
 
-# New function for processing competition data
+# take comp id input and return info regarding it
 def process_competition(comp_id):
     comp_id = int(comp_id)
     competitions = json.loads(get_competitions())
@@ -32,7 +32,7 @@ def process_competition(comp_id):
             break
 
     if selected_competition:
-        result = f"Competition ID: {selected_competition['competition_id']}, Competition Name: {selected_competition['competition_name']}"
+        result = f"Competition ID: {selected_competition['competition_id']}, Competition Name: {selected_competition['competition_name']}, Competition Name: {selected_competition['season_name']}"
     else:
         result = f"Competition not found for ID: {comp_id}"
 

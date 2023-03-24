@@ -4,14 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Results</title>
+    <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/icofont/icofont.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/owl.carousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/venobox/venobox.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/aos/aos.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
 </head>
 <body>
-    <h1>Competition Selection Results</h1>
-    {% if result %}
-        <p>{{ result }}</p>
-    {% else %}
-        <p>No result available.</p>
-    {% endif %}
-    <a href="/">Back to Home</a>
+    <main>
+        <section class="bg-primary">
+            <div class="container py-5">
+                <h1>Competition Selection Results</h1>
+                {% if result %}
+                    <p>{{ result }}</p>
+                {% else %}
+                    <p>No result available.</p>
+                {% endif %}
+                <a href="/">Back to Home</a>
+            </div>
+        </section>
+    </main>
 </body>
 </html>

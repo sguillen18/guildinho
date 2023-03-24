@@ -3,34 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/icofont/icofont.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/owl.carousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/venobox/venobox.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/aos/aos.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
     <title>Soccer Data</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/competitions.js') }}"></script>
 </head>
 <body>
-    <h1>Soccer Data</h1>
-    <form action="/process_competition" method="post">
-        <label for="comp_id">Competition:</label>
-        <select id="comp_id" name="comp_id" required>
-            <!-- Competition options will be added using JavaScript -->
-        </select><br>
-        
-        <!-- Other form elements go here -->
+    <main>
+        <section class="bg-primary">
+            <div class="container py-5">
+                <h1>Soccer Data</h1>
+                <form action="/process_competition" method="post">
+                    <label for="comp_id">Competition:</label>
+                    <select id="comp_id" name="comp_id" required>
+                    </select><br>
 
-        <input type="submit" value="Submit">
-    </form>
-    
-    <script>
-        $(document).ready(function() {
-            // Fetch and populate competitions
-            $.getJSON('/competitions', function(data) {
-                var options = '';
-                for (var i = 0; i < data.length; i++) {
-                    var comp = data[i];
-                    options += '<option value="' + comp.competition_id + '">' + comp.competition_name + ' - ' + comp.season_name + '</option>';
-                }
-                $('#comp_id').html(options);
-            });
-        });
-    </script>
+                    <!-- Other form elements go here -->
+
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
