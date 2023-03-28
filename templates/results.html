@@ -19,6 +19,22 @@
                 {% else %}
                     <p>No result available.</p>
                 {% endif %}
+                <h2>Team Selection Results</h2>
+                {% if teams %}
+                    <form action="/process_team" method="post">
+                        <label for="team_name">Select Team:</label>
+                        <select id="team_name" name="team_name" required>
+                            {% for team in teams %}
+                                <option value="{{ team }}">{{ team }}</option>
+                            {% endfor %}
+                        </select><br>
+                        <input type="hidden" name="comp_id" value="{{ comp_id }}">
+                        <input type="hidden" name="season_id" value="{{ season_id }}">
+                        <input type="submit" value="Submit">
+                    </form>
+                {% else %}
+                    <p>No teams available.</p>
+                {% endif %}
                 <a href="/">Back to Home</a>
             </div>
         </section>

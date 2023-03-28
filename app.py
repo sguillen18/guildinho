@@ -1,7 +1,7 @@
 import logging
 from logging.handlers import RotatingFileHandler
 from flask import Flask, render_template, request, redirect, url_for
-from appcode.guildinhotest import get_competitions, process_competition
+from appcode.guildinhotest import get_competitions, process_competition, get_teams
 
 app = Flask(__name__)
 
@@ -28,14 +28,27 @@ def competitions():
 def process_competition_route():
     comp_id_season_id = request.form['comp_id']
     comp_id, season_id = comp_id_season_id.split(',')
+
+    #get competition info
     result = process_competition(comp_id, season_id)
-    return redirect(url_for('results', result=result))
+
+    #get teams
+    teams = get_teams(comp_id, season_id)
+
+    return render_template('results.html', result=result, teams=teams)
 
 # New route for displaying results
 @app.route('/results')
 def results():
     result = request.args.get('result', None)
     return render_template('results.html', result=result)
+
+#route for taking the team selection
+@app.route('/process_team', methods=['POST'])
+def process_team_route():
+    team = request.form['team_name']
+    print(team)
+    return render_template('results.html', team=team)
 
 # Other Flask routes go here
 

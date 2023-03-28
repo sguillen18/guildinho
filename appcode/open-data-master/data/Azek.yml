@@ -1,0 +1,25 @@
+Azek 
+  -use their portal to request samples that you receive and feel.
+  -this piece is failing on them which is sparking their interest for monitoring.
+      -these translate into leads for their sales team so failures of this costs them $$$
+
+  -some are former DD users on the infra side
+  
+is looking to explore Synthetic & RUM w/ Session replay & infrastructure
+
+Both of our contacts are former users and want to see a quick review of synthetics, Real User Monitoring, custom metrics submission via API, and high-level overview of infrastructure.
+
+Currently they do not have anything in place for front-end monitoring of their wordpress sites. They're making a transition to vercel hosting in 2023 but need basic site pinging and ability to understand what their users are experiencing when sites go down.
+
+They provide materials for houses i.e. decks and part of their checkout process provides free samples of materials to their customers to begin their sales process. Recently customers have been experiencing issues with checkout that is leaving this team blind as to how to resolve these issues.
+
+Need to be able to ping sites and know of an issue ahead of their customer bases.
+
+basic infra monitoring is of interest as well. Highlighting a dashboard & alerts with synthetic data is of interest for them.
+
+
+
+Tech stack:
+ServiceNow
+AWS
+MongoDB
