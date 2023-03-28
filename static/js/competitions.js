@@ -4,7 +4,8 @@ $(document).ready(function() {
         var options = '';
         for (var i = 0; i < data.length; i++) {
             var comp = data[i];
-            options += '<option value="' + comp.competition_id + '">' + comp.competition_name + ' - ' + comp.season_name + '</option>';
+            var value = comp.competition_id + ',' + comp.season_id; // Combine IDs with comma delimiter
+            options += '<option value="' + value + '">' + comp.competition_name + ' - ' + comp.season_name + '</option>';
         }
         $('#comp_id').html(options);
     });
